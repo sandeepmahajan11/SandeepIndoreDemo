@@ -1,0 +1,6 @@
+framework module Pods_SandeepIndoreDemoUITests {
+  umbrella header "Pods-SandeepIndoreDemoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
