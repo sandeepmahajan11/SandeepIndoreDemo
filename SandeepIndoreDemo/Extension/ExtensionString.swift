@@ -14,9 +14,11 @@ import Foundation
 extension String {
     
     /**
-     *  Used to conver string to URL
+     *  Conver string to URL
      *
-     *  Called only by string object
+     *  param key : nothing.
+     *
+     *  return : URL.
      *
      *  @Developed By: Sandeep Mahajan
      */
@@ -25,7 +27,15 @@ extension String {
         return url
     }
     
-    
+    /**
+     *  Removed space or trim space
+     *
+     *  param key : nothing.
+     *
+     *  return : String.
+     *
+     *  @Developed By: Sandeep Mahajan
+     */
     func trimmedString() -> String? {
         return (self.trimmingCharacters(in: (NSCharacterSet.whitespacesAndNewlines)))
     }

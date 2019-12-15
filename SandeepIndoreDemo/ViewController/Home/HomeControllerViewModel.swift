@@ -14,21 +14,29 @@ import Foundation
  */
 class HomeControllerViewModel {
  
+    // TableView numberOfSection
     var numberOfSection = 1
+    
+    // TableView numberOfRows
     var numberOfRows = 0
     
+    // api success
     var successFetchListing : (()->())?
+    
+    // api failure
     var failureFetchListing : (()->())?
+    
+    // api response holder
     var resHomeListing : ResponseHomeListing?
 }
 
 
-/**
- *  HomeController ViewModel API
- *
- *  @Developed By: Sandeep Mahajan
- */
 extension HomeControllerViewModel {
+    /**
+     *  HomeController ViewModel API
+     *
+     *  @Developed By: Sandeep Mahajan
+     */
     func getListing(){
         
         let url = (BASEURLs.baseURL + APIKeys.API_JSON_DATA).toUrl()

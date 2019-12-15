@@ -14,12 +14,18 @@ class HomeListingTbViewCell: UITableViewCell {
      *
      *  @Developed By: Sandeep Mahajan
      */
+    
+    // imgPicture : Image holder on cell
     @IBOutlet weak var imgPicture: UIImageView! {
         didSet {
             imgPicture.rounded()
         }
     }
+    
+    // lblTitle : Title holder on cell
     @IBOutlet weak var lblTitle: UILabel!
+    
+     // lblDesc : Description holder on cell
     @IBOutlet weak var lblDesc: UILabel!
     
     

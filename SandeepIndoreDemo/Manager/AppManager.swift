@@ -8,15 +8,15 @@
 import Foundation
 import Reachability
 
+/**
+ *  AppManager is Shared Class.
+ *
+ *  Used To Provide Or Access Common Feature
+ *
+ *  @Developed By: Sandeep Mahajan
+ */
 class AppManager: NSObject {
     
-    /**
-     *  AppManager is Shared Class.
-     *
-     *  Used To Provide Or Access Common Feature
-     *
-     *  @Developed By: Sandeep Mahajan
-     */
     static let shared = AppManager()
     
     internal static let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -26,13 +26,17 @@ class AppManager: NSObject {
 }
 
 
-/**
- *  Internal Methods Declared
- *
- *  @Developed By: Sandeep Mahajan
- */
 extension AppManager {
     
+    /**
+     *  To Check Internet Connection
+     *
+     *  Param : No parameter required
+     *
+     *  return : Boolean value return
+     *
+     *  @Developed By: Sandeep Mahajan
+     */
      func isNetworkAvailable()-> Bool{
         if Reachability()!.connection == Reachability.Connection.none {
             return false
@@ -40,6 +44,16 @@ extension AppManager {
         return true
     }
     
+    
+    /**
+     *  To Show Alert Message
+     *
+     *  Param : Takes two argument title & message
+     *
+     *  return : Button action return
+     *
+     *  @Developed By: Sandeep Mahajan
+     */
      func showAlertNativeDialog(title:String, message:String,completion:@escaping ((String)->Void)) {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)

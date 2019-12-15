@@ -8,24 +8,33 @@
 import Foundation
 import Toast_Swift
 
-/**
- *  Class function.
- *
- *  @param key : Not required.
- *
- *  @return String.
- *
- *  @Developed By: Sandeep Mahajan
- */
 public extension NSObject{
+    /**
+     *  Class function, called by class name only
+     *
+     *  param key : Not required.
+     *
+     *  return : String.
+     *
+     *  @Developed By: Sandeep Mahajan
+     */
     class var nameOfClass: String{
         return NSStringFromClass(self).components(separatedBy: ".").last!
     }
     
 }
 
-//MARK:- Make Android Toast
+
 extension UIViewController {
+    /**
+     *  Toast Message,Like Android Toast
+     *
+     *  param key : Takes one param title.
+     *
+     *  return : nothing.
+     *
+     *  @Developed By: Sandeep Mahajan
+     */
     func makeAndroidToast(title: String?){
         var style = ToastStyle()
         style.messageColor = .white

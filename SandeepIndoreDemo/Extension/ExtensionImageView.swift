@@ -13,9 +13,12 @@ import Foundation
  */
 extension UIImageView{
     
-    
     /**
-     *  Rounded To ImageView
+     *  Called by class name only, Used to round imageview
+     *
+     *  param key : nothing.
+     *
+     *  return : nothing.
      *
      *  @Developed By: Sandeep Mahajan
      */

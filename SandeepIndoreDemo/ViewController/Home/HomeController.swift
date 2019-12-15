@@ -49,12 +49,16 @@ class HomeController: BaseController {
 
 }
 
-/**
- *  Internal Methods Defined.
- *
- *  @Developed By: Sandeep Mahajan
- */
 extension HomeController {
+    /**
+     * Configure tablview , set delegate, datasource,footerview
+     *
+     * Param : nothing
+     *
+     * Return : nothing
+     *
+     *  @Developed By: Sandeep Mahajan
+     */
     func configTableView(){
         self.tbViewHomeListing.delegate = self
         self.tbViewHomeListing.dataSource = self
@@ -109,6 +113,15 @@ extension HomeController : UITableViewDelegate {
  */
 extension HomeController  {
     
+    /**
+     * Get home lsiting from API Response
+     *
+     * Param : nothing
+     *
+     * Return : nothing
+     *
+     * @Developed By: Sandeep Mahajan
+     */
     func getListing(){
         homeViewModel.getListing()
         homeViewModel.successFetchListing = {
@@ -131,6 +144,15 @@ extension HomeController  {
         }
     }
     
+    /**
+     * Referesh control, To refersh listing by calling api
+     *
+     * Param : Anyobject
+     *
+     * Return : nothing
+     *
+     * @Developed By: Sandeep Mahajan
+     */
     @objc func refresh(sender:AnyObject) {
         // Code to refresh table view
         self.getListing()
