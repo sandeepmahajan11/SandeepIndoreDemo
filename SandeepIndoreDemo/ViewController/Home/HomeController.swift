@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeController: BaseController {
-
+/*let contactsTableView = UITableView() // view*/
     
     /**
      *  HomeController Properties Declared
@@ -17,7 +17,9 @@ class HomeController: BaseController {
      */
     var homeViewModel = HomeControllerViewModel()
     
-    @IBOutlet weak var tbViewHomeListing : UITableView!
+     var tbViewHomeListing = UITableView()
+    
+    
     
     //MARK:- Making Refersh control
     lazy var refreshControl: UIRefreshControl = {
@@ -40,7 +42,8 @@ class HomeController: BaseController {
         // Do any additional setup after loading the view.
         self.title = NavigationConstant.titleHome
         self.configTableView()
-        self.getListing()
+        self.configTableViewCell()
+        self.getListing()        
     }
 
     
@@ -60,10 +63,27 @@ extension HomeController {
      *  @Developed By: Sandeep Mahajan
      */
     func configTableView(){
+        
+        self.view.addSubview(tbViewHomeListing)
+        
+        self.tbViewHomeListing.translatesAutoresizingMaskIntoConstraints = false
+        
+        tbViewHomeListing.mas_remakeConstraints { (make) in
+            make?.left.setOffset(0)
+            make?.top.setOffset(0)
+            make?.bottom.setOffset(0)
+            make?.right.setOffset(0)
+        }
+        
         self.tbViewHomeListing.delegate = self
         self.tbViewHomeListing.dataSource = self
         self.tbViewHomeListing.keyboardDismissMode = .onDrag
         self.tbViewHomeListing.tableFooterView = UIView()
+    }
+    
+    func configTableViewCell(){
+        self.tbViewHomeListing.register(HomeListingTbViewCell.self, forCellReuseIdentifier: HomeListingTbViewCell.nameOfClass)
+        
     }
 }
 
@@ -100,6 +120,9 @@ extension HomeController : UITableViewDataSource {
  *  @Developed By: Sandeep Mahajan
  */
 extension HomeController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }

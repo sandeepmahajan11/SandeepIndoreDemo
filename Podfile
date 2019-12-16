@@ -10,6 +10,7 @@ target 'SandeepIndoreDemo' do
   pod 'SDWebImage'
   pod 'SwiftLint'
   pod 'Toast-Swift'
+  pod 'Masonry'
   # Pods for SandeepIndoreDemo
 	
   target 'SandeepIndoreDemoTests' do

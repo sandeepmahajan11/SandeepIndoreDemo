@@ -1,6 +1,16 @@
 
+
+
 disabled_rules:
 - trailing_whitespace
+- identifier_name
+- line_length
+- colon
+- comma
+- control_statement
+
+
+
 
 opt_in_rules:
 - empty_count
@@ -17,6 +27,7 @@ error: 200
 ignores_function_declarations: true
 ignores_comments: true
 ignores_urls: true
+
 
 function_body_length:
 warning: 300
@@ -39,4 +50,10 @@ cyclomatic_complexity:
 warning: 15
 error: 25
 
+swiftlint:
+- disable all
+
+
 reporter: "xcode"
+
+

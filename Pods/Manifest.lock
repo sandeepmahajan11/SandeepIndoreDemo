@@ -1,4 +1,5 @@
 PODS:
+  - Masonry (1.1.0)
   - ObjectMapper (3.5.0)
   - ReachabilitySwift (4.3.1)
   - SDWebImage (5.0.6):
@@ -8,6 +9,7 @@ PODS:
   - Toast-Swift (5.0.0)
 
 DEPENDENCIES:
+  - Masonry
   - ObjectMapper
   - ReachabilitySwift
   - SDWebImage
@@ -16,6 +18,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Masonry
     - ObjectMapper
     - ReachabilitySwift
     - SDWebImage
@@ -23,12 +26,13 @@ SPEC REPOS:
     - Toast-Swift
 
 SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ObjectMapper: 078b564ed25c6578b62588e306bf1da3924636d4
   ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SwiftLint: fed9c66336e41fc74dc48a73678380718f0c8b0e
   Toast-Swift: 36f4720243c8582c2be243a60a51e193c761f541
 
-PODFILE CHECKSUM: a3c8a8bfc6649b9433ded8814ba01a4441f1f3df
+PODFILE CHECKSUM: 389873de464312bf5864d08ccde2e8852f6c1c26
 
 COCOAPODS: 1.7.1

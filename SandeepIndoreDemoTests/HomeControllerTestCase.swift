@@ -75,5 +75,22 @@ class HomeControllerTestCase: XCTestCase {
         
     }
 
-    
+    func testAPICalling(){
+        
+        let expectation = self.expectation(description: "simple expectation")
+        
+        let url = (BASEURLs.baseURL + APIKeys.API_JSON_DATA).toUrl()
+        
+        var result : NSDictionary?
+        
+        APIManager.request(url: url, showLoader: false) { (status, response, message) in
+            result = response
+            expectation.fulfill()
+            XCTAssert(status == true, "status is not matching the server data")
+        }
+
+        self.waitForExpectations(timeout: 5) { (error) in
+            XCTAssertNotNil(result)
+        }
+    }
 }

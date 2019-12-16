@@ -16,18 +16,33 @@ class HomeListingTbViewCell: UITableViewCell {
      */
     
     // imgPicture : Image holder on cell
-    @IBOutlet weak var imgPicture: UIImageView! {
-        didSet {
-            imgPicture.rounded()
-        }
-    }
+    let imgPicture:UIImageView = {
+        let img = UIImageView()
+        img.contentMode = .scaleToFill
+        img.translatesAutoresizingMaskIntoConstraints = false // enable autolayout
+        img.rounded()
+        
+        return img
+    }()
     
     // lblTitle : Title holder on cell
-    @IBOutlet weak var lblTitle: UILabel!
+    let lblTitle:UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 17)
+        label.textColor = .black
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
-     // lblDesc : Description holder on cell
-    @IBOutlet weak var lblDesc: UILabel!
-    
+    // lblDesc : Description holder on cell
+    let lblDesc:UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 15)
+        label.textColor =  .black
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     
     
@@ -38,9 +53,11 @@ class HomeListingTbViewCell: UITableViewCell {
      */
     var rowsData : ResponseHomeListing.Rows? {
         didSet {
+            self.lblTitle.text = ""
             if let title = rowsData?.title, title.trimmedString() != "" {
                 self.lblTitle.text = title
             }
+            self.lblDesc.text = ""
             if let desc = rowsData?.description, desc.trimmedString() != "" {
                 self.lblDesc.text = desc
             }
@@ -56,12 +73,53 @@ class HomeListingTbViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    /**
+     *  init method to initialize controls
+     *
+     *  @Developed By: Sandeep Mahajan
+     */
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        self.contentView.addSubview(imgPicture)
+        self.contentView.addSubview(lblTitle)
+        self.contentView.addSubview(lblDesc)
+        
+        imgPicture.mas_remakeConstraints { (make) in
+            make?.left.setOffset(10)
+            make?.top.setOffset(10)
+            make?.bottom.lessThanOrEqualTo()(-10)
+            make?.width.setOffset(100)
+            make?.height.setOffset(100)
+        }
+        
+        
+        lblTitle.mas_remakeConstraints { (make) in
+            make?.left.equalTo()(imgPicture.mas_right)?.with().offset()(10)
+            make?.right.setOffset(-10)
+            make?.top.setOffset(10)
+            make?.height.equalTo()(20)
+        }
+        
+        lblDesc.mas_remakeConstraints { (make) in
+            make?.left.equalTo()(imgPicture.mas_right)?.with().offset()(10)
+            make?.right.setOffset(-10)
+            make?.top.equalTo()(lblTitle.mas_bottom)?.with().offset()(10)
+            make?.bottom.setOffset(-10)
+            
+        }
+        
     }
-
+    
+    required init?(coder aDecoder: NSCoder) {
+        
+        super.init(coder: aDecoder)
+    }
 }
+
+
+
+ 
