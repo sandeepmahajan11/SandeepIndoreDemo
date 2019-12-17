@@ -25,7 +25,6 @@
 		C3AE9F6B23A4AE9C001A7A28 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE9F6A23A4AE9C001A7A28 /* ExtensionString.swift */; };
 		C3AE9F6E23A4B148001A7A28 /* ExtensionImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE9F6D23A4B148001A7A28 /* ExtensionImageView.swift */; };
 		C3AE9F7423A4E65B001A7A28 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE9F7323A4E65B001A7A28 /* AppManager.swift */; };
-		C3AE9F7B23A4EAFC001A7A28 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C3AE9F7A23A4EAFC001A7A28 /* .swiftlint.yml */; };
 		C3AE9F7D23A5E86B001A7A28 /* HomeControllerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE9F7C23A5E86B001A7A28 /* HomeControllerTestCase.swift */; };
 		FDFE9D20870A082438FB1D60 /* Pods_SandeepIndoreDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5408056F4C493C9D20EAD0E /* Pods_SandeepIndoreDemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -75,7 +74,6 @@
 		C3AE9F6C23A4AF78001A7A28 /* SandeepIndoreDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SandeepIndoreDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		C3AE9F6D23A4B148001A7A28 /* ExtensionImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionImageView.swift; sourceTree = "<group>"; };
 		C3AE9F7323A4E65B001A7A28 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
-		C3AE9F7A23A4EAFC001A7A28 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		C3AE9F7C23A5E86B001A7A28 /* HomeControllerTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeControllerTestCase.swift; sourceTree = "<group>"; };
 		C5C27B2B81067A7F189923CE /* Pods_SandeepIndoreDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SandeepIndoreDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5EEE4605DA77459B593F57 /* Pods-SandeepIndoreDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SandeepIndoreDemo.debug.xcconfig"; path = "Target Support Files/Pods-SandeepIndoreDemo/Pods-SandeepIndoreDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				C3AE9F6C23A4AF78001A7A28 /* SandeepIndoreDemo-Bridging-Header.h */,
-				C3AE9F7A23A4EAFC001A7A28 /* .swiftlint.yml */,
 				C3AE9F7123A4E4F8001A7A28 /* AppDelegate */,
 				C3AE9F7023A4E4E7001A7A28 /* Manager */,
 				C3AE9F6723A4A9EB001A7A28 /* WebAPIHandler */,
@@ -364,7 +361,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3AE9F7B23A4EAFC001A7A28 /* .swiftlint.yml in Resources */,
 				C3AE9F3523A49EF0001A7A28 /* LaunchScreen.storyboard in Resources */,
 				C3AE9F3223A49EF0001A7A28 /* Assets.xcassets in Resources */,
 			);
@@ -428,7 +424,7 @@
 		};
 		C3AE9F7523A4E891001A7A28 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -439,7 +435,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};

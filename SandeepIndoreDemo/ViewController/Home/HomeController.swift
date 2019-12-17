@@ -79,6 +79,7 @@ extension HomeController {
         self.tbViewHomeListing.dataSource = self
         self.tbViewHomeListing.keyboardDismissMode = .onDrag
         self.tbViewHomeListing.tableFooterView = UIView()
+        self.tbViewHomeListing.allowsSelection = false
     }
     
     func configTableViewCell(){
@@ -97,11 +98,9 @@ extension HomeController : UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.homeViewModel.numberOfSection
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.homeViewModel.numberOfRows
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         if let homeCell = tableView.dequeueReusableCell(withIdentifier: HomeListingTbViewCell.nameOfClass) as? HomeListingTbViewCell {

@@ -15,7 +15,7 @@ class HomeControllerTestCase: XCTestCase {
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        self.homeController = (storyboard.instantiateViewController(withIdentifier: "HomeController") as! HomeController)
+        self.homeController = (storyboard.instantiateViewController(withIdentifier: "HomeController") as? HomeController)
         self.homeController.homeViewModel.numberOfRows = 5
         self.homeController.loadView()
         self.homeController.viewDidLoad()

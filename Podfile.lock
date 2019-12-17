@@ -13,7 +13,7 @@ DEPENDENCIES:
   - ObjectMapper
   - ReachabilitySwift
   - SDWebImage
-  - SwiftLint
+  - SwiftLint (~> 0.27)
   - Toast-Swift
 
 SPEC REPOS:
@@ -33,6 +33,6 @@ SPEC CHECKSUMS:
   SwiftLint: fed9c66336e41fc74dc48a73678380718f0c8b0e
   Toast-Swift: 36f4720243c8582c2be243a60a51e193c761f541
 
-PODFILE CHECKSUM: 389873de464312bf5864d08ccde2e8852f6c1c26
+PODFILE CHECKSUM: 9d79cbba11e2d40c3641659a092f4abfb7b7ca99
 
 COCOAPODS: 1.7.1
