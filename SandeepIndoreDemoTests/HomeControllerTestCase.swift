@@ -13,14 +13,16 @@ class HomeControllerTestCase: XCTestCase {
     var homeController : HomeController!
     
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        self.homeController = (storyboard.instantiateViewController(withIdentifier: "HomeController") as? HomeController)
-        self.homeController.homeViewModel.numberOfRows = 5
-        self.homeController.loadView()
-        self.homeController.viewDidLoad()
-        
-    }
+            // Put setup code here. This method is called before the invocation of each test method in the class.
+    //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    //        self.homeController = (storyboard.instantiateViewController(withIdentifier: "HomeController") as? HomeController)
+    //
+            self.homeController = HomeController()
+            self.homeController.homeViewModel.numberOfRows = 5
+            self.homeController.loadView()
+            self.homeController.viewDidLoad()
+            
+        }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.

@@ -151,6 +151,18 @@ extension HomeController  {
                 if let title = self.homeViewModel.resHomeListing?.title {
                     self.title = title
                 }
+                
+                if let count = self.homeViewModel.resHomeListing?.rows!.count, count > 0 {
+                    //To remove null values
+                    self.homeViewModel.resHomeListing?.rows = self.homeViewModel.resHomeListing?.rows?.filter({ (rowItem) -> Bool in
+                        if rowItem.title == nil && rowItem.imageHref == nil && rowItem.description == nil {
+                            return false
+                        }
+                        return true
+                    })
+                    //updated rows
+                    self.homeViewModel.numberOfRows = (self.homeViewModel.resHomeListing?.rows!.count)!
+                }
                 self.refreshControl.endRefreshing()
                 self.tbViewHomeListing.reloadData()
             }
